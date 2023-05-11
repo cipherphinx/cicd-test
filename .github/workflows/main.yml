@@ -13,14 +13,14 @@ jobs:
       
       - name: Configure AWS credentials
         run: |
-          export AWS_ACCESS_KEY_ID=AKIA6CY242QZNWJWFZTC
-          export AWS_SECRET_ACCESS_KEY=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
+          export AWS_ACCESS_KEY_ID=
+          export AWS_SECRET_ACCESS_KEY=
           terraform init
         working-directory: ./
         
       - name: Terraform apply
         run: |
-          export AWS_ACCESS_KEY_ID=AKIA6CY242QZNWJWFZTC
-          export AWS_SECRET_ACCESS_KEY=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
+          export AWS_ACCESS_KEY_ID=
+          export AWS_SECRET_ACCESS_KEY=
           terraform apply -auto-approve
         working-directory: ./
