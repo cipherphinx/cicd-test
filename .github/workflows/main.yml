@@ -6,10 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo main branch
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
         
       - name: Setting up terraform
-        uses: hashicorp/setup-terraform@v2
+        uses: hashicorp/setup-terraform@v1
       
       - name: Configure AWS credentials
         env:
@@ -18,6 +18,7 @@ jobs:
         run: |
           aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
           aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+
       - name: Initializing Terraform
         run: terraform init
         working-directory: ./
